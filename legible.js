@@ -12,6 +12,9 @@
 (function () {
   "use strict";
 
+  const BIG_TEXT = 14;
+  const STEP_DOWN = 1; // how much smaller to make text that's too big, in px
+
   // Load Inter font
   const fontLink = document.createElement("link");
   fontLink.href =
@@ -55,7 +58,7 @@
         .custom-honor-text {
             font-family: 'Inter', sans-serif !important;
             font-weight: 700 !important;
-            font-size: 14px !important;
+            font-size: ${BIG_TEXT}px !important;
             color: white !important;
             font-variant: small-caps !important;
             letter-spacing: 0.5px !important;
@@ -122,6 +125,11 @@
       div.className = `custom-honor-text ${getOutlineClass(wrap)}`;
       div.textContent = cleaned;
       wrap.appendChild(div);
+
+      // Shrink font if text overflows
+      if (div.scrollWidth > wrap.clientWidth) {
+        div.style.setProperty("font-size", `${BIG_TEXT - STEP_DOWN}px`, "important");
+      }
     });
   }
 
