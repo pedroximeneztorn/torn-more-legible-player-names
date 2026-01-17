@@ -25,7 +25,7 @@
         .custom-honor-text {
             font-family: 'Inter', sans-serif !important;
             font-weight: 700 !important;
-            font-size: 10px !important;
+            font-size: 14px !important;
             color: white !important;
             font-variant: small-caps !important;
             letter-spacing: 0.5px !important;
@@ -99,6 +99,10 @@
                  1px -1px 0 #c080ff,
                 -1px  1px 0 #c080ff,
                  1px  1px 0 #c080ff !important;
+        }
+
+        .forums-thread-wrap .poster-wrap .poster {
+            overflow: visible !important;
         }
     `;
   document.head.appendChild(style);
