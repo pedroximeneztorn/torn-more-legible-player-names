@@ -19,6 +19,36 @@
   fontLink.rel = "stylesheet";
   document.head.appendChild(fontLink);
 
+  // Outline colors: [name, color, thick]
+  const outlineColors = [
+    ["black", "#000", false],
+    ["blue", "#310AF5", true],
+    ["red", "#ff4d4d", true],
+    ["green", "#3B9932", true],
+    ["orange", "#ff9c40", true],
+    ["purple", "#c080ff", true],
+  ];
+
+  function buildOutline(color, thick) {
+    const offsets = [
+      [-1, -1],
+      [1, -1],
+      [-1, 1],
+      [1, 1],
+    ];
+    if (thick) {
+      offsets.push([0, -1], [0, 1], [-1, 0], [1, 0]);
+    }
+    return offsets.map(([x, y]) => `${x}px ${y}px 0 ${color}`).join(", ");
+  }
+
+  const outlineStyles = outlineColors
+    .map(
+      ([name, color, thick]) =>
+        `.outline-${name} { text-shadow: ${buildOutline(color, thick)} !important; }`
+    )
+    .join("\n");
+
   // Inject styling
   const style = document.createElement("style");
   style.textContent = `
@@ -53,53 +83,7 @@
             display: none !important;
         }
 
-        .outline-black {
-            text-shadow:
-                -1px -1px 0 #000,
-                 1px -1px 0 #000,
-                -1px  1px 0 #000,
-                 1px  1px 0 #000 !important;
-        }
-
-        .outline-blue {
-            text-shadow:
-                -1px -1px 0 #310AF5,
-                 1px -1px 0 #310AF5,
-                -1px  1px 0 #310AF5,
-                 1px  1px 0 #310AF5 !important;
-        }
-
-        .outline-red {
-            text-shadow:
-                -1px -1px 0 #ff4d4d,
-                 1px -1px 0 #ff4d4d,
-                -1px  1px 0 #ff4d4d,
-                 1px  1px 0 #ff4d4d !important;
-        }
-
-        .outline-green {
-            text-shadow:
-                -1px -1px 0 #3B9932,
-                 1px -1px 0 #3B9932,
-                -1px  1px 0 #3B9932,
-                 1px  1px 0 #3B9932 !important;
-        }
-
-        .outline-orange {
-            text-shadow:
-                -1px -1px 0 #ff9c40,
-                 1px -1px 0 #ff9c40,
-                -1px  1px 0 #ff9c40,
-                 1px  1px 0 #ff9c40 !important;
-        }
-
-        .outline-purple {
-            text-shadow:
-                -1px -1px 0 #c080ff,
-                 1px -1px 0 #c080ff,
-                -1px  1px 0 #c080ff,
-                 1px  1px 0 #c080ff !important;
-        }
+        ${outlineStyles}
 
         .forums-thread-wrap .poster-wrap .poster {
             overflow: visible !important;
