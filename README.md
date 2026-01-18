@@ -11,9 +11,9 @@
   </tr>
 
 <tr>
-  <td><img src="docs/standard.png" /></td>
-  <td><img src="docs/gingerbeardman.png" /></td>
-  <td><img src="docs/this.png" /></td>
+  <td><img width="492" src="docs/standard.png" /></td>
+  <td><img width="492" src="docs/gingerbeardman.png" /></td>
+  <td><img width="492" src="docs/this.png" /></td>
 </tr>
 
 </table>
