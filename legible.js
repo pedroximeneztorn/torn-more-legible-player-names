@@ -7,7 +7,8 @@
 // @author       GingerBeardMan
 // @match        https://www.torn.com/*
 // @grant        none
-// @license	 GNU GPLv3
+// @license      GNU GPLv3
+// @homepageURL  https://github.com/pedroximeneztorn/torn-more-legible-player-names
 // ==/UserScript==
 
 (function () {
