@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name         Torn: More Legible Player Names
+// @name         Torn: More Legible Player Names (PX fork)
 // @namespace    http://tampermonkey.net/
-// @version      2.4
-// @description  Replaces Torn's pixel honor bar names with a larger, more legible font, while maintaining color outlines for staff roles and those that opt to display blue name.
+// @version      0.1
+// @description  Replaces Torn's pixel honor bar names with a larger, more legible font. Fork of https://greasyfork.org/en/scripts/531629-torn-more-legible-player-names
+// @author       PedroXimenz
 // @author       GingerBeardMan
 // @match        https://www.torn.com/*
 // @grant        none
